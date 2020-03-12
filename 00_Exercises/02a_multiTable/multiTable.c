@@ -5,6 +5,11 @@
 void PrintUsageMessage(void);
 void PrintMultiTable( int tableLimit );
 
+const int lowerLimit = 1;
+const int upperLimit = 10;
+
+
+
 
 int main( int argc, char* argv[] )
 {
@@ -17,7 +22,7 @@ int main( int argc, char* argv[] )
 	else
 	{
 		inputValue = atoi(argv[1]);
-		if( inputValue >= 1 && inputValue <= 10 )
+		if( inputValue >= lowerLimit && inputValue <= upperLimit )
 		{
 			PrintMultiTable( inputValue );
 		}
@@ -39,7 +44,7 @@ int main( int argc, char* argv[] )
 void PrintUsageMessage(void)
 {
 	printf("Usage: multiTable wholeNumber\n\t \
-		wholeNumber: integer on the interval [1, 10]\n");
+		wholeNumber: integer on the interval [%d, %d]\n", lowerLimit, upperLimit);
 }
 
 void PrintMultiTable( int tableLimit ) 
